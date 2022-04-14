@@ -1,0 +1,115 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  color: #333;
+}
+
+* a {
+  color: #333;
+}
+
+.container {
+  -webkit-transition: width .2s ease-in;
+  transition: width .2s ease-in;
+  -webkit-transition-delay: .2s ease-in;
+          transition-delay: .2s ease-in;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 100%;
+  width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.container ul li {
+  padding: 10px 5px;
+  -webkit-transition: background-color .1s ease-in-out;
+  transition: background-color .1s ease-in-out;
+}
+
+.container ul li:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+.container ul li a {
+  height: 100%;
+  width: 100%;
+}
+
+.container ul li a > span:first-child {
+  font-size: 20px;
+}
+
+.container ul li a > span:first-child i:nth-child(odd) {
+  color: #aaa;
+  font-style: normal;
+}
+
+.container ul li a > span:first-child i:nth-child(even) {
+  color: white;
+}
+
+.container ul li a > span:last-child {
+  position: relative;
+  top: 2px;
+}
+
+> .container ul li a > span:last-child:nth-child(1) {
+  font-family: arial black;
+  font-size: 2em;
+}
+
+.container:hover {
+  width: 350px;
+}
+
+@media (max-width: 640px) {
+  .container:hover {
+    width: 220px;
+  }
+}
+
+.contents {
+  margin-left: 60px;
+  height: 100vh;
+}
+
+.contents img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.contents h1 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font-size: 120px;
+  color: #fff;
+  font-family: arial black;
+  mix-blend-mode: difference;
+  line-height: .9em;
+}
+
+@media (max-width: 640px) {
+  .contents h1 {
+    font-size: 50px;
+  }
+}
+/*# sourceMappingURL=hoverMenu.css.map */
