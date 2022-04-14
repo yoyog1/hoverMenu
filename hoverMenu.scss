@@ -1,0 +1,120 @@
+@charset "UTF-8";
+*{
+    box-sizing: border-box;
+    list-style-type:none;
+    text-decoration: none;
+    color: #333;
+
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    a{
+        color: #333;
+        // :hover{
+        //     color:rgba(#333,.5)}
+    }
+}    
+$hov-menuWidth:350px;
+$menuWidth:60px;
+
+.container{
+    transition: width .2s ease-in;
+    transition-delay: .2s ease-in;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    $bg-color:#fff;
+    background:rgba($bg-color,1);
+    height: 100vh;
+    width: $menuWidth;
+    white-space: nowrap;  
+    overflow: hidden;
+    ul{
+        display: flex;
+        flex-flow: column;
+        // padding-left: 15px;
+        li{
+           padding:10px 5px;
+           transition: background-color .1s ease-in-out;
+           &:hover{
+               background-color: darken($color: $bg-color, $amount: 10%);
+               cursor: pointer;
+           }
+           
+            a{
+                height: 100%;
+                width: 100%;
+
+                // フォントオーサム
+                >span:first-child{
+                    font-size: 20px;
+                    $iColor:#aaa;
+                    i:nth-child(odd){
+                        color: $iColor;
+                        font-style: normal;
+                    }
+                    i:nth-child(even){
+                        color: lighten($color: $iColor, $amount: 100%);
+                    }
+                }
+
+                // テキスト
+                >span:last-child{
+                    // padding-left: 1.2em;
+                    // font-size: 25px;
+                    position: relative;
+                    top: 2px;
+                    >&:nth-child(1){
+                        font-family: arial black;
+                        font-size: 2em;
+                    }
+                }
+            }
+
+        }
+        
+    }    
+}
+.container:hover{
+    width: $hov-menuWidth;
+    // ／スマホ＼
+    @media (max-width: 640px) {
+    width:220px;
+}
+}
+.contents{
+    margin-left: $menuWidth;
+    height: 100vh; 
+    
+    img{
+        // height: 100%;
+        // width: 100%;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    h1{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 120px;
+        color: #fff;
+        font-family: arial black;
+        
+        mix-blend-mode:difference;
+        line-height: .9em;
+
+        // ／スマホ＼
+        @media (max-width: 640px) {
+            font-size: 50px;
+        }
+    }
+    // video{
+    //     height: 100vh;
+    //     width: 100%;
+    //     object-fit: cover;
+    // }
+
+}
